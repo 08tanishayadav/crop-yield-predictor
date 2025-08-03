@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crop Yield Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Crop Yield Prediction</h1>
+        <form method="post" action="/predict">
+            <input type="text" name="Crop" placeholder="Crop (e.g. Rice)">
+            <input type="text" name="Season" placeholder="Season (e.g. Kharif)">
+            <input type="text" name="State" placeholder="State (e.g. Maharashtra)">
+            <input type="text" name="Area" placeholder="Area (hectares)">
+            <input type="text" name="Annual_Rainfall" placeholder="Annual Rainfall (mm)">
+            <input type="text" name="Fertilizer" placeholder="Fertilizer used (kg)">
+            <input type="text" name="Pesticide" placeholder="Pesticide used (kg)">
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <div id="predi">
+            {{ prediction_text }}
+        </div>
+    </div>
+</body>
+</html>
